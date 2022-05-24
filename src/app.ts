@@ -1,6 +1,5 @@
 import express from 'express';
-import { connect, model, Schema } from 'mongoose';
 const app = express();
-
+app.use(express.json());
 
 export default app;

@@ -1,15 +1,12 @@
-import { model, Schema } from "mongoose";
+export class Department {
+    constructor(
+        department: {
+            name: string,
+        }
+    ) {}
 
-interface IDepartment {
-
-    name: string
 
 }
 
-export const departmentSchema = new Schema<IDepartment>({
 
-    name: String
-    
-})
 
-export const departmentModel = model<IDepartment>('Department', departmentSchema);

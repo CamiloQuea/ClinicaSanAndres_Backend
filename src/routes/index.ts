@@ -1,14 +1,14 @@
 import { Router } from "express";
+import { departmentRoutes } from "./departmentRoutes";
+import { userRoutes } from "./userRoutes";
 
 
 const routes = Router();
 
-routes.get('/', async (req, res) => {
+//ROUTAS DE DEPARTAMENTO
+routes.use(departmentRoutes);
+routes.use(userRoutes);
 
 
-
-    res.json({});
-
-});
 
 export default routes;

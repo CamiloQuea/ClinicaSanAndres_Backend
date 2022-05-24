@@ -4,7 +4,8 @@ config();
 
 const dbconfig = {
 
-    uri: process.env.URI || 'mongodb://localhost:27017/Clinica'
+    uri: process.env.URI || 'mongodb://localhost:27017',
+    dbName: 'Test'
 
 }
 

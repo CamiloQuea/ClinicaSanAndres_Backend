@@ -1,43 +1,49 @@
 
-import mongoose, { connect, connection } from 'mongoose';
+import { Db, MongoClient} from 'mongodb'
 import dbconfig from '../configs/db'
-import log from './log';
+
+class MongoDB {
+
+    cachedDb: Db;
+    client: MongoClient;
+
+    MONGODB_URI = dbconfig.uri;
+    DB_NAME = dbconfig.dbName;
+
+    async connectToDatabase() {
+
+        if (this.cachedDb) {
+
+            return this.cachedDb;
+        }
+        try {
+            // Connect to our MongoDB database hosted on MongoDB Atlas
+
+            this.client = await MongoClient.connect(this.MONGODB_URI);
+
+            const db = this.client.db(this.DB_NAME);
+
+            this.cachedDb = db;
 
 
-const uri: string = dbconfig.uri;
+            this.client.on('connectionCreated', () => {
+                console.log('ENTRO')
+            })
+
+            return db;
+        } catch (error) {
+            console.log("ERROR aquiring DB Connection!");
+            console.log(error);
+            throw error;
+        }
 
 
-export async function initDb() {
+    };
 
-    await connect(uri);
-    
+    setListener() {
+
+    }
+
 }
 
-connection.on('error', (err) => {
-
-    log.error(err);
-
-});
-
-
-connection.on('open', () => {
-
-    log.info('BASE DE DATOS CONECTADA');
-
-});
-
-connection.on('closed', (err) => {
-
-    log.error(err);
-
-});
-
-connection.on('disconnected', () => {
-    log.error('CONEXION PERDIDA');
-});
-
-connection.on('reconnected', () => {
-    log.info('CONEXION RECONECTADO');
-});
-
-
+export const mongodb = new MongoDB();

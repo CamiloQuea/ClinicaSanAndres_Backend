@@ -1,6 +1,6 @@
 import { model, Schema } from "mongoose";
 
-interface IServices extends Document{
+interface IServices {
     
     name: String,
     cost: String,

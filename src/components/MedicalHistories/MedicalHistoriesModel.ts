@@ -1,6 +1,6 @@
 import { Document, model, Schema } from "mongoose";
 
-interface IMedicalHistory extends Document {
+interface IMedicalHistory{
 
     filiacion: {
         name: String,
