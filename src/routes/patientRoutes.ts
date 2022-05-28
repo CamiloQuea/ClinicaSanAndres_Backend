@@ -5,7 +5,7 @@ import { verifyUser } from "../middleware/verifyUser";
 
 export const patientRoutes = Router();
 
-patientRoutes.get('/patient', verifyUser, patientController.getPatients);
+patientRoutes.get('/patient', patientController.getPatients);
 patientRoutes.get('/patient/:id', verifyUser, patientController.getPatientById);
 
 
