@@ -1,5 +1,5 @@
-
-import { Db, MongoClient} from 'mongodb'
+import log from '../services/log';
+import { Db, MongoClient } from 'mongodb'
 import dbconfig from '../configs/db'
 
 class MongoDB {
@@ -25,22 +25,22 @@ class MongoDB {
 
             this.cachedDb = db;
 
+            log.info('DB conectada');
 
-            this.client.on('connectionCreated', () => {
-                console.log('ENTRO')
-            })
+            this.setListener();
 
             return db;
         } catch (error) {
             console.log("ERROR aquiring DB Connection!");
-            console.log(error);
             throw error;
         }
 
 
     };
 
-    setListener() {
+    private setListener() {
+
+
 
     }
 

@@ -1,6 +1,6 @@
+import { ObjectId } from "mongodb";
+
 export const UserExample = [
-
-
     {
         cmp: '123',
         name: 'Camilo',
@@ -9,25 +9,10 @@ export const UserExample = [
         email: 'camilo@gmail.com',
         phone: '12345678',
         department: {
-            _id:'',
+            _id: new ObjectId,
             name: 'oftalmologia'
         },
-        password: '123ldskfokahsdf',
+        password: '123',
         rol: ['doctor']
     },
 ]
-
-const userExampleJSON ={
-    "cmp": "123",
-    "name": "Camilo",
-    "fatherSurname": "Quea",
-    "motherSurname": "Montesinos",
-    "email": "camilo@gmail.com",
-    "phone": "12345678",
-    "department": {
-        "_id":"",
-        "name": "oftalmologia"
-    },
-    "password": "123ldskfokahsdf",
-    "rol": ["doctor"]
-}

@@ -1,23 +1,17 @@
 import { mongodb } from "../../services/db";
 import { DepartmentExample } from "./DepartmentExample";
-import { Department } from "./DepartmentsModel";
+import { Department, departmentComponent } from "./DepartmentSchema";
 
 
 class DepartmentDao {
 
-    private async departmentCollection() {
-        const users = mongodb.cachedDb.collection('departments');
-        return users;
-    }
-
-    async createDepartment(name:string) {
+    async createDepartment(department: Department) {
 
 
-        const departments = await this.departmentCollection();
+        const departments = await departmentComponent.getCollection();
 
-        const departmentSaved = await departments.insertOne({name},{raw:true});
+        const departmentSaved = await departments.insertOne(department);
 
-        console.log(departmentSaved)
 
         return departmentSaved;
 
@@ -25,7 +19,7 @@ class DepartmentDao {
 
     async getDepartments() {
 
-        const departments = await this.departmentCollection();
+        const departments = await departmentComponent.getCollection();
 
         const departmentList = await departments.find().toArray();
 

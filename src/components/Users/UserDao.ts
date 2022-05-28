@@ -1,19 +1,31 @@
-import { mongodb } from "../../services/db";
-import { UserExample } from "./UserExample";
-import { User } from "./UserModel";
+import { ObjectId } from "mongodb";
+import { departmentComponent } from "../Departments/DepartmentSchema";
+import { userComponent, User } from "./UserSchema";
 
 class UserDao {
 
-    private async userCollection() {
-        const users = mongodb.cachedDb.collection('users');
-        return users;
-    }
-
     async createUser(user: User) {
 
-        const users = await this.userCollection();
-        
-        const userSaved = await users.insertOne(user.user);
+        const usersCollection = await userComponent.getCollection();
+
+        const departmentsCollection = await departmentComponent.getCollection();
+
+        const countDocs = await departmentsCollection.countDocuments({
+            $and: [
+                {
+                    _id: { $in: [new ObjectId(user.department._id)] }
+                },
+                {
+                    name: { $in: [user.department.name] }
+                }
+            ]
+        });
+
+        if (countDocs == 0) {
+            return console.log('NO EXISTE DEPARTAMENTO')
+        }
+
+        const userSaved = await usersCollection.insertOne(user);
 
         return userSaved;
 
@@ -21,11 +33,31 @@ class UserDao {
 
     async getUsers() {
 
-        const users = await this.userCollection();
+        const users = await userComponent.getCollection();
 
         const userList = await users.find().toArray()
 
         return userList;
+
+    }
+
+    async getUserById(_id: string) {
+
+        const users = await userComponent.getCollection();
+
+        const userFound = await users.findOne({ _id: new ObjectId(_id) });
+
+        return userFound;
+
+    }
+
+    async getUserByEmail(email: string) {
+
+        const users = await userComponent.getCollection();
+
+        const userFound = await users.findOne({ email });
+
+        return userFound;
 
     }
 

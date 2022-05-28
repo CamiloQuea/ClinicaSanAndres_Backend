@@ -5,22 +5,35 @@ import { departmentDao } from "./DepartmentDao";
 class DepartmentController {
 
 
-    async createDepartment (req: Request, res: Response, next: NextFunction) {
+    async createDepartment(req: Request, res: Response, next: NextFunction) {
 
         const body = req.body;
 
-        const departmentSaved = await departmentBusiness.createDepartment(body);
+        try {
 
-        res.json(departmentSaved);
+            const departmentSaved = await departmentBusiness.createDepartment(body);
+
+            res.json(departmentSaved);
+        } catch (e: any) {
+
+            next(e);
+
+        }
+
 
     }
 
-    async getDepartments (req: Request, res: Response, next: NextFunction)  {
+    async getDepartments(req: Request, res: Response, next: NextFunction) {
 
-        const departmentList = await departmentBusiness.getDepartments();
+        try {
 
-        res.json(departmentList);
+            const departmentList = await departmentBusiness.getDepartments();
 
+            res.json(departmentList);
+
+        } catch (error) {
+            next(error)
+        }
     }
 }
 
