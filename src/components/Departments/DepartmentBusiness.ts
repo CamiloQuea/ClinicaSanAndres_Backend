@@ -1,17 +1,22 @@
 import { departmentDao } from "./DepartmentDao";
+import { departmentValidation } from "./utils/DepartmentValidation";
 
 class DepartmentBusiness {
 
 
-    async createDepartment (body: any) {
+    async createDepartment(body: any) {
 
-        const departmentSaved= await departmentDao.createDepartment(body.name);
+        const { error, details, value } = departmentValidation(body);
+
+        if (error) return { error, details };
+
+        const departmentSaved = await departmentDao.createDepartment(value!);
 
         return departmentSaved;
 
     }
 
-    async getDepartments () {
+    async getDepartments() {
 
         const departmentList = await departmentDao.getDepartments();
 

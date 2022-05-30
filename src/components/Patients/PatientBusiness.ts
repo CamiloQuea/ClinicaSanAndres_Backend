@@ -1,6 +1,7 @@
 import { Filter } from "mongodb";
 import { patientDao } from "./PatientDao";
 import { Patient } from "./PatientSchema";
+import { patientValidation } from "./utils/PatientValidation";
 
 class PatientBusiness {
 
@@ -27,6 +28,10 @@ class PatientBusiness {
     }
 
     async createPatient(body: Patient) {
+
+        const { error, value, details } = patientValidation(body);
+
+        if (error && !value) return { error, details }
 
         const patientCreated = await patientDao.createPatient(body);
 

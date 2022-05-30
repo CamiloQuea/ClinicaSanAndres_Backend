@@ -1,5 +1,5 @@
 import { ObjectId } from "mongodb";
-import { Collection } from "../helpers/Collection";
+import { Collection } from "../Collection";
 import { departmentDao } from "./DepartmentDao";
 import { DepartmentExample } from "./DepartmentExample";
 
@@ -15,7 +15,7 @@ export interface Service {
 export interface Department {
 
     name: string,
-    service: Service[]
+    services: Service[]
 
 }
 

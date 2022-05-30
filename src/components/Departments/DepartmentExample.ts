@@ -3,25 +3,25 @@ import { Department } from "./DepartmentSchema";
 export const DepartmentExample: Department[] = [
     {
         name: 'oftalmologia',
-        service: [
+        services: [
             { name: 'consulta' }
         ]
     },
     {
         name: 'laboratorio',
-        service: [
+        services: [
             { name: 'consulta' }
         ]
     },
     {
         name: 'rayos X',
-        service: [
+        services: [
             { name: 'consulta' }
         ]
     },
     {
         name: 'pediatria',
-        service: [
+        services: [
             { name: 'consulta' }
         ]
     }

@@ -1,5 +1,5 @@
 import { ObjectId } from "mongodb";
-import { Collection } from "../helpers/Collection";
+import { Collection } from "../Collection";
 import { PatientExample } from "./PatientExample";
 
 const collectionName = 'patients';
@@ -16,7 +16,7 @@ export interface Patient {
     gender: string,
     allergis: string[],
     healthInsuranceType: string,
-    Nationality: string
+    nationality: string
 }
 
 const indexes = [{ field: 'dni', mode: 'unique' }]

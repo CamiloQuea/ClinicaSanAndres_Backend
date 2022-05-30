@@ -1,5 +1,5 @@
 import { ObjectId } from "mongodb";
-import { Collection } from "../helpers/Collection";
+import { Collection } from "../Collection";
 
 const collectionName = 'medicalHistories';
 

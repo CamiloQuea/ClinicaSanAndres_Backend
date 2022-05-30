@@ -14,7 +14,7 @@ export const PatientExample = [{
 
   ],
   "healthInsuranceType": "Mapfre",
-  "Nationality": "Saint Martin",
+  "nationality": "Saint Martin",
   "__v": 0
 }, {
   "_id": new ObjectId("629179142787351cbe801bd1"),
@@ -30,7 +30,7 @@ export const PatientExample = [{
 
   ],
   "healthInsuranceType": "EsSalud",
-  "Nationality": "Cook Islands",
+  "nationality": "Cook Islands",
   "__v": 0
 }, {
   "_id": new ObjectId("629179142787351cbe801bd2"),
@@ -46,7 +46,7 @@ export const PatientExample = [{
 
   ],
   "healthInsuranceType": "EsSalud",
-  "Nationality": "Pakistan",
+  "nationality": "Pakistan",
   "__v": 0
 }, {
   "_id": new ObjectId("629179142787351cbe801bd3"),
@@ -62,7 +62,7 @@ export const PatientExample = [{
 
   ],
   "healthInsuranceType": "Mapfre",
-  "Nationality": "Jamaica",
+  "nationality": "Jamaica",
   "__v": 0
 }, {
   "_id": new ObjectId("629179142787351cbe801bd4"),
@@ -78,7 +78,7 @@ export const PatientExample = [{
 
   ],
   "healthInsuranceType": "Mapfre",
-  "Nationality": "Mozambique",
+  "nationality": "Mozambique",
   "__v": 0
 }, {
   "_id": new ObjectId("629179142787351cbe801bd5"),
@@ -94,7 +94,7 @@ export const PatientExample = [{
 
   ],
   "healthInsuranceType": "Mapfre",
-  "Nationality": "Central African Republic",
+  "nationality": "Central African Republic",
   "__v": 0
 }, {
   "_id": new ObjectId("629179142787351cbe801bd6"),
@@ -110,7 +110,7 @@ export const PatientExample = [{
 
   ],
   "healthInsuranceType": "Rimac",
-  "Nationality": "Bhutan",
+  "nationality": "Bhutan",
   "__v": 0
 }, {
   "_id": new ObjectId("629179142787351cbe801bd7"),
@@ -126,7 +126,7 @@ export const PatientExample = [{
 
   ],
   "healthInsuranceType": "EsSalud",
-  "Nationality": "Kiribati",
+  "nationality": "Kiribati",
   "__v": 0
 }, {
   "_id": new ObjectId("629179142787351cbe801bd8"),
@@ -142,7 +142,7 @@ export const PatientExample = [{
 
   ],
   "healthInsuranceType": "SIS",
-  "Nationality": "Kenya",
+  "nationality": "Kenya",
   "__v": 0
 }, {
   "_id": new ObjectId("629179142787351cbe801bd9"),
@@ -158,7 +158,7 @@ export const PatientExample = [{
 
   ],
   "healthInsuranceType": "SIS",
-  "Nationality": "Bahamas",
+  "nationality": "Bahamas",
   "__v": 0
 }, {
   "_id": new ObjectId("629179142787351cbe801bda"),
@@ -174,7 +174,7 @@ export const PatientExample = [{
 
   ],
   "healthInsuranceType": "SIS",
-  "Nationality": "Mozambique",
+  "nationality": "Mozambique",
   "__v": 0
 }, {
   "_id": new ObjectId("629179142787351cbe801bdb"),
@@ -190,7 +190,7 @@ export const PatientExample = [{
 
   ],
   "healthInsuranceType": "Sanitas",
-  "Nationality": "Brazil",
+  "nationality": "Brazil",
   "__v": 0
 }, {
   "_id": new ObjectId("629179142787351cbe801bdc"),
@@ -206,7 +206,7 @@ export const PatientExample = [{
 
   ],
   "healthInsuranceType": "SIS",
-  "Nationality": "Wallis and Futuna",
+  "nationality": "Wallis and Futuna",
   "__v": 0
 }, {
   "_id": new ObjectId("629179142787351cbe801bdd"),
@@ -222,7 +222,7 @@ export const PatientExample = [{
 
   ],
   "healthInsuranceType": "SIS",
-  "Nationality": "Gambia",
+  "nationality": "Gambia",
   "__v": 0
 }, {
   "_id": new ObjectId("629179142787351cbe801bde"),
@@ -238,7 +238,7 @@ export const PatientExample = [{
 
   ],
   "healthInsuranceType": "Sanitas",
-  "Nationality": "French Southern Territories",
+  "nationality": "French Southern Territories",
   "__v": 0
 }, {
   "_id": new ObjectId("629179142787351cbe801bdf"),
@@ -254,7 +254,7 @@ export const PatientExample = [{
 
   ],
   "healthInsuranceType": "Rimac",
-  "Nationality": "Guernsey",
+  "nationality": "Guernsey",
   "__v": 0
 }, {
   "_id": new ObjectId("629179142787351cbe801be0"),
@@ -270,7 +270,7 @@ export const PatientExample = [{
 
   ],
   "healthInsuranceType": "SIS",
-  "Nationality": "Isle of Man",
+  "nationality": "Isle of Man",
   "__v": 0
 }, {
   "_id": new ObjectId("629179142787351cbe801be1"),
@@ -286,7 +286,7 @@ export const PatientExample = [{
 
   ],
   "healthInsuranceType": "Mapfre",
-  "Nationality": "Nicaragua",
+  "nationality": "Nicaragua",
   "__v": 0
 }, {
   "_id": new ObjectId("629179142787351cbe801be2"),
@@ -302,7 +302,7 @@ export const PatientExample = [{
 
   ],
   "healthInsuranceType": "Pacifico",
-  "Nationality": "Madagascar",
+  "nationality": "Madagascar",
   "__v": 0
 }, {
   "_id": new ObjectId("629179142787351cbe801be3"),
@@ -318,7 +318,7 @@ export const PatientExample = [{
 
   ],
   "healthInsuranceType": "Pacifico",
-  "Nationality": "Togo",
+  "nationality": "Togo",
   "__v": 0
 }, {
   "_id": new ObjectId("629179142787351cbe801be4"),
@@ -334,7 +334,7 @@ export const PatientExample = [{
 
   ],
   "healthInsuranceType": "Sanitas",
-  "Nationality": "Mauritania",
+  "nationality": "Mauritania",
   "__v": 0
 }, {
   "_id": new ObjectId("629179142787351cbe801be5"),
@@ -350,7 +350,7 @@ export const PatientExample = [{
 
   ],
   "healthInsuranceType": "Rimac",
-  "Nationality": "Gambia",
+  "nationality": "Gambia",
   "__v": 0
 }, {
   "_id": new ObjectId("629179142787351cbe801be6"),
@@ -366,7 +366,7 @@ export const PatientExample = [{
 
   ],
   "healthInsuranceType": "Mapfre",
-  "Nationality": "Botswana",
+  "nationality": "Botswana",
   "__v": 0
 }, {
   "_id": new ObjectId("629179142787351cbe801be7"),
@@ -382,7 +382,7 @@ export const PatientExample = [{
 
   ],
   "healthInsuranceType": "SIS",
-  "Nationality": "Kuwait",
+  "nationality": "Kuwait",
   "__v": 0
 }, {
   "_id": new ObjectId("629179142787351cbe801be8"),
@@ -398,7 +398,7 @@ export const PatientExample = [{
 
   ],
   "healthInsuranceType": "Rimac",
-  "Nationality": "Bahrain",
+  "nationality": "Bahrain",
   "__v": 0
 }, {
   "_id": new ObjectId("629179142787351cbe801be9"),
@@ -414,7 +414,7 @@ export const PatientExample = [{
 
   ],
   "healthInsuranceType": "Pacifico",
-  "Nationality": "Hong Kong",
+  "nationality": "Hong Kong",
   "__v": 0
 }, {
   "_id": new ObjectId("629179142787351cbe801bea"),
@@ -430,7 +430,7 @@ export const PatientExample = [{
 
   ],
   "healthInsuranceType": "Pacifico",
-  "Nationality": "United States of America",
+  "nationality": "United States of America",
   "__v": 0
 }, {
   "_id": new ObjectId("629179142787351cbe801beb"),
@@ -446,7 +446,7 @@ export const PatientExample = [{
 
   ],
   "healthInsuranceType": "Mapfre",
-  "Nationality": "Palestinian Territory",
+  "nationality": "Palestinian Territory",
   "__v": 0
 }, {
   "_id": new ObjectId("629179142787351cbe801bed"),
@@ -462,7 +462,7 @@ export const PatientExample = [{
 
   ],
   "healthInsuranceType": "SIS",
-  "Nationality": "Cambodia",
+  "nationality": "Cambodia",
   "__v": 0
 }, {
   "_id": new ObjectId("629179142787351cbe801bec"),
@@ -478,6 +478,6 @@ export const PatientExample = [{
 
   ],
   "healthInsuranceType": "Rimac",
-  "Nationality": "Azerbaijan",
+  "nationality": "Azerbaijan",
   "__v": 0
 }]

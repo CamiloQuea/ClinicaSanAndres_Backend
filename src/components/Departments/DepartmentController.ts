@@ -1,6 +1,7 @@
 import { NextFunction, Request, Response } from "express";
 import { departmentBusiness } from "./DepartmentBusiness";
 import { departmentDao } from "./DepartmentDao";
+import { departmentValidation } from "./utils/DepartmentValidation";
 
 class DepartmentController {
 
@@ -14,6 +15,7 @@ class DepartmentController {
             const departmentSaved = await departmentBusiness.createDepartment(body);
 
             res.json(departmentSaved);
+            
         } catch (e: any) {
 
             next(e);

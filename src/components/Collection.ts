@@ -1,5 +1,5 @@
 import { OptionalUnlessRequiredId, Collection as Col } from "mongodb";
-import { mongodb } from "../../services/db";
+import { mongodb } from "../services/db";
 
 export class Collection<T>{
     constructor(

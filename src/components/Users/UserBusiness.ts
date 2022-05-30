@@ -2,12 +2,15 @@ import { comparePassword, encryptPassword } from "../../util/bcrypt";
 import { signJSONData, verifyToken } from "../../util/jwt";
 import { userDao } from "./UserDao";
 import { User } from "./UserSchema";
+import { userValidation } from "./utils/UserValidation";
 
 class UserBusiness {
 
     async createUser(body: any) {
 
-        const user = body;
+        const { value: user, error, details } = userValidation(body);
+
+        if (error || !user) return { error, details }
 
         user.password = await encryptPassword(user.password);
 

@@ -6,6 +6,8 @@ class UserDao {
 
     async createUser(user: User) {
 
+        
+
         const usersCollection = await userComponent.getCollection();
 
         const departmentsCollection = await departmentComponent.getCollection();
@@ -20,12 +22,17 @@ class UserDao {
                 }
             ]
         });
-
+        
+        
         if (countDocs == 0) {
-            return console.log('NO EXISTE DEPARTAMENTO')
+            return 
         }
 
+
+
         const userSaved = await usersCollection.insertOne(user);
+
+
 
         return userSaved;
 
