@@ -1,9 +1,13 @@
 import { ObjectId } from "mongodb";
 import { Collection } from "../Collection";
+import { departmentDao } from "../Departments/DepartmentDao";
+import { patientDao } from "../Patients/PatientDao";
+import { userDao } from "../Users/UserDao";
+import { listHistorias } from "./MedicalHistories";
 
 const collectionName = 'medicalHistories';
 
-interface MedicalHistory {
+export interface MedicalHistory {
     number: string,
     filiacion: {
         name: string,
@@ -13,7 +17,7 @@ interface MedicalHistory {
         edad: Number,
         gender: string,
         birthday: Date,
-        attorney: string,
+        attorney: string | null,
         patient_id: ObjectId
     },
     anamnesis: {
@@ -56,4 +60,16 @@ interface MedicalHistory {
 
 const indexes = [{ field: 'number', mode: 'unique' }];
 
-export const medicalHistoryComponent = new Collection<MedicalHistory>(collectionName, indexes);
+export const medicalHistoryComponent = new Collection<MedicalHistory>(collectionName, indexes, async (medicalHistoryCollection) => {
+
+    const departments = await departmentDao.getDepartments();
+
+    const patients = await patientDao.getPatients();
+
+    const users = await userDao.getUsers();
+
+    const historias = await listHistorias(departments, patients, users,10000)
+
+    await medicalHistoryCollection.insertMany(historias)
+
+});

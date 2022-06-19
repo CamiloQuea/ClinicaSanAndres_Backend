@@ -2,11 +2,14 @@ import { compare, genSalt, hash } from 'bcrypt'
 
 export const encryptPassword = async (password: string) => {
 
-    const salt = await genSalt(10);
+
+    const salt = await genSalt(5);
 
     const passwordHashed = await hash(password, salt);
 
+
     return passwordHashed;
+
 
 }
 

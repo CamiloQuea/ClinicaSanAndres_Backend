@@ -6,27 +6,30 @@ class UserDao {
 
     async createUser(user: User) {
 
-        
 
         const usersCollection = await userComponent.getCollection();
 
         const departmentsCollection = await departmentComponent.getCollection();
 
-        const countDocs = await departmentsCollection.countDocuments({
-            $and: [
-                {
-                    _id: { $in: [new ObjectId(user.department._id)] }
-                },
-                {
-                    name: { $in: [user.department.name] }
-                }
-            ]
-        });
-        
-        
-        if (countDocs == 0) {
-            return 
-        }
+
+        // console.log(departmentsCollection)
+
+        // const countDocs = await departmentsCollection.countDocuments({
+        //     $and: [
+        //         {
+        //             _id: user.department._id
+        //         },
+        //         {
+        //             name: user.department.name
+        //         }
+        //     ]
+        // });
+
+
+
+        // if (countDocs == 0) {
+        //     return
+        // }
 
 
 

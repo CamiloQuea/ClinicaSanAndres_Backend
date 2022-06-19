@@ -6,14 +6,14 @@ import { DepartmentExample } from "./DepartmentExample";
 const collectionName = 'departments';
 
 export interface Service {
-
+    _id: ObjectId,
     name: string,
-    
+
 
 }
 
 export interface Department {
-
+    _id: ObjectId,
     name: string,
     services: Service[]
 

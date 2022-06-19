@@ -1,0 +1,1 @@
+export type rols = 'dev' | 'doctor' | 'admin';

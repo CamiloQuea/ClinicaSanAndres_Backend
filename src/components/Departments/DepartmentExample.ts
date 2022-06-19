@@ -1,28 +1,33 @@
+import { ObjectId } from "mongodb";
 import { Department } from "./DepartmentSchema";
 
 export const DepartmentExample: Department[] = [
     {
+        _id: new ObjectId(),
         name: 'oftalmologia',
         services: [
-            { name: 'consulta' }
+            { _id: new ObjectId(), name: 'consulta' }
         ]
     },
     {
+        _id: new ObjectId(),
         name: 'laboratorio',
         services: [
-            { name: 'consulta' }
+            { _id: new ObjectId(), name: 'consulta' }
         ]
     },
     {
+        _id: new ObjectId(),
         name: 'rayos X',
         services: [
-            { name: 'consulta' }
+            {    _id: new ObjectId(),name: 'consulta' }
         ]
     },
     {
+        _id: new ObjectId(),
         name: 'pediatria',
         services: [
-            { name: 'consulta' }
+            {    _id: new ObjectId(),name: 'consulta' }
         ]
     }
 ]

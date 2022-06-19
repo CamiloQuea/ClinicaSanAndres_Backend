@@ -5,9 +5,11 @@
   "main": "./build/bin/main.js",
   "scripts": {
     "dev": "nodemon ./src/bin/main.ts",
-    "start": "node ./build/bin/main.js"
+    "start": "node ./build/bin/main.js",
+    "lol": "nodemon ./src/bin/test.ts"
   },
   "dependencies": {
+    "@faker-js/faker": "^7.2.0",
     "bcrypt": "^5.0.1",
     "cookie-parser": "^1.4.6",
     "cors": "^2.8.5",

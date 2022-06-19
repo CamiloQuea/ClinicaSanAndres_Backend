@@ -21,14 +21,14 @@ export const userValidation = (department: User) => {
                 'string.base': '"CMP" tiene que tener ser string',
             }),
         department: Joi.object({
-            _id: Joi.string()
+            _id: Joi
                 .custom((value, helpers) => {
                     if (!ObjectId.isValid(value))
                         return helpers.error("objectid.invalid")
                     else
                         return value
                 }).messages({
-                    'string.base': '"Nombre de departamento" tiene que tener ser string',
+                    'custom.base': '"ID de departamento" tiene que tener ser string',
                     "objectid.invalid": "ObjectId de departmento no es valido"
                 }),
             name: Joi.string()

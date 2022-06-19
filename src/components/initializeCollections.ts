@@ -6,7 +6,7 @@ import { userComponent } from "./Users/UserSchema"
 
 export const initCollections = async ()=>{
     await departmentComponent.createCollection();
-    await patientComponent.createCollection();
     await userComponent.createCollection();
+    await patientComponent.createCollection();
     await medicalHistoryComponent.createCollection();
 }

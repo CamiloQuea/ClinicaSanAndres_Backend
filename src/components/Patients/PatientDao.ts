@@ -3,11 +3,11 @@ import { Patient, patientComponent } from "./PatientSchema";
 
 class PatientDao {
 
-    async getPatients(filter: Filter<Patient>) {
+    async getPatients(filter?: Filter<Patient>) {
 
         const patientsCollection = await patientComponent.getCollection();
 
-        const patientsList = await patientsCollection.find(filter).toArray();
+        const patientsList = await patientsCollection.find().toArray();
 
         return patientsList;
 

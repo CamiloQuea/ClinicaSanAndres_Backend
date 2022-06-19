@@ -8,15 +8,22 @@ class UserBusiness {
 
     async createUser(body: any) {
 
-        const { value: user, error, details } = userValidation(body);
 
-        if (error || !user) return { error, details }
+        
 
-        user.password = await encryptPassword(user.password);
+            const { value: user, error, details } = userValidation(body);
 
-        const userSaved = await userDao.createUser(user);
+            if (error || !user) return { error, details }
 
-        return userSaved;
+
+            // console.log('ANTES')
+            user.password = (await encryptPassword(user.password))!;
+            // console.log('DESPUES')
+
+            const userSaved = await userDao.createUser(user);
+
+            return userSaved;
+       
 
     }
 

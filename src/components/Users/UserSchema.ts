@@ -7,7 +7,7 @@ import { UserExample } from "./UserExample";
 const collectionName = 'users';
 
 export interface User {
-    _id?: ObjectId |string,
+    _id: ObjectId,
     cmp: string,
     name: string,
     fatherSurname: string,
@@ -15,7 +15,7 @@ export interface User {
     email: string,
     phone: string,
     department: {
-        _id: ObjectId | string,
+        _id: ObjectId,
         name: string
     },
     password: string,
@@ -31,8 +31,10 @@ export const userComponent = new Collection<User>(collectionName, indexes, async
     const department = await departmentDao.getDepartments();
 
     UserExample.forEach(async (user) => {
+
         const { _id, name } = department[Math.floor(Math.random() * department.length)];
-        user.department = { _id: _id.toString(), name };
+        user.department = { _id, name };
+        
         const a = await userBusiness.createUser(user);
     });
 

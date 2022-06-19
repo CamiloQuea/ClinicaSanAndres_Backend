@@ -1,8 +1,10 @@
 import { ObjectId } from "mongodb";
 import { User } from "./UserSchema";
 
+
 export const UserExample: User[] = [
     {
+        _id: new ObjectId(),
         cmp: '123',
         name: 'Camilo',
         fatherSurname: 'Quea',
@@ -10,13 +12,14 @@ export const UserExample: User[] = [
         email: 'camilo@gmail.com',
         phone: '12345678',
         department: {
-            _id: new ObjectId().toString(),
-            name: 'oftalmologia'
+            _id: new ObjectId(),
+            name: 'oftalmologia',
         },
         password: '123',
         rols: ['dev']
     },
     {
+        _id: new ObjectId(),
         cmp: "976",
         name: "Felipe",
         fatherSurname: "Weimann",
@@ -24,15 +27,16 @@ export const UserExample: User[] = [
         email: "Vicky_Schaefer42@gmail.com",
         phone: "1-816-337-7609 x172",
         department: {
-            _id: new ObjectId().toString(),
-            name: "Beauty"
+            _id: new ObjectId(),
+            name: "Beauty",
+
         },
         password: "NMHpgQJMCaI97xa",
         rols: [
             "doctor"
         ]
     }, {
-
+        _id: new ObjectId(),
         cmp: "243",
         name: "Tyrell",
         fatherSurname: "Hahn",
@@ -40,15 +44,16 @@ export const UserExample: User[] = [
         email: "Kaylie_OKon@yahoo.com",
         phone: "(750) 466-9291 x00054",
         department: {
-            _id: new ObjectId().toString(),
-            name: "Shoes"
+            _id: new ObjectId(),
+            name: "Shoes",
+
         },
         password: "LsNVVR_qRcvonZ5",
         rols: [
             "secretary"
         ]
     }, {
-
+        _id: new ObjectId(),
         cmp: "377",
         name: "Bulah",
         fatherSurname: "Gibson",
@@ -56,15 +61,16 @@ export const UserExample: User[] = [
         email: "Geovanny.Collier69@hotmail.com",
         phone: "624-919-4159 x85007",
         department: {
-            _id: new ObjectId().toString(),
-            name: "Toys"
+            _id: new ObjectId(),
+            name: "Toys",
+
         },
         password: "GvWfxPD3XgnSxd9",
         rols: [
             "doctor"
         ]
     }, {
-
+        _id: new ObjectId(),
         cmp: "761",
         name: "Amara",
         fatherSurname: "Bernier",
@@ -72,15 +78,16 @@ export const UserExample: User[] = [
         email: "Ashlee87@hotmail.com",
         phone: "432-646-9464 x8601",
         department: {
-            _id: new ObjectId().toString(),
-            name: "Beauty"
+            _id: new ObjectId(),
+            name: "Beauty",
+
         },
         password: "1g_zBaTk0GMsv9P",
         rols: [
             "doctor"
         ]
     }, {
-
+        _id: new ObjectId(),
         cmp: "858",
         name: "Owen",
         fatherSurname: "Torphy",
@@ -88,15 +95,16 @@ export const UserExample: User[] = [
         email: "Dorcas_Kohler21@yahoo.com",
         phone: "(449) 225-4846 x1884",
         department: {
-            _id: new ObjectId().toString(),
-            name: "Beauty"
+            _id: new ObjectId(),
+            name: "Beauty",
+
         },
         password: "RHKmIohXZ5f2eDK",
         rols: [
             "secretary"
         ]
     }, {
-
+        _id: new ObjectId(),
         cmp: "332",
         name: "Abdullah",
         fatherSurname: "Gulgowski",
@@ -104,15 +112,16 @@ export const UserExample: User[] = [
         email: "Elisha_Hoppe@yahoo.com",
         phone: "1-861-794-9832 x8178",
         department: {
-            _id: new ObjectId().toString(),
-            name: "Jewelery"
+            _id: new ObjectId(),
+            name: "Jewelery",
+
         },
         password: "oUikBbN6oVie0TO",
         rols: [
             "doctor"
         ]
     }, {
-
+        _id: new ObjectId(),
         cmp: "921",
         name: "Eldridge",
         fatherSurname: "Orn",
@@ -120,15 +129,16 @@ export const UserExample: User[] = [
         email: "Cecelia84@hotmail.com",
         phone: "956-666-3660",
         department: {
-            _id: new ObjectId().toString(),
-            name: "Shoes"
+            _id: new ObjectId(),
+            name: "Shoes",
+
         },
         password: "bxgGORK6rwdKekx",
         rols: [
             "secretary"
         ]
     }, {
-
+        _id: new ObjectId(),
         cmp: "554",
         name: "Citlalli",
         fatherSurname: "Bins",
@@ -136,15 +146,16 @@ export const UserExample: User[] = [
         email: "Oda.Cole@yahoo.com",
         phone: "1-462-497-4450 x34282",
         department: {
-            _id: new ObjectId().toString(),
-            name: "Outdoors"
+            _id: new ObjectId(),
+            name: "Outdoors",
+
         },
         password: "JkUqdVCKrCpn6DE",
         rols: [
             "doctor"
         ]
     }, {
-
+        _id: new ObjectId(),
         cmp: "433",
         name: "Darius",
         fatherSurname: "Mosciski",
@@ -152,15 +163,16 @@ export const UserExample: User[] = [
         email: "Myrna.Gottlieb68@gmail.com",
         phone: "1-494-500-7063",
         department: {
-            _id: new ObjectId().toString(),
-            name: "Movies"
+            _id: new ObjectId(),
+            name: "Movies",
+
         },
         password: "OIz4lkUyyQaqC0T",
         rols: [
             "doctor"
         ]
     }, {
-
+        _id: new ObjectId(),
         cmp: "298",
         name: "Morgan",
         fatherSurname: "Wiza",
@@ -168,15 +180,16 @@ export const UserExample: User[] = [
         email: "Eula_Dibbert@hotmail.com",
         phone: "(216) 887-5286 x9328",
         department: {
-            _id: new ObjectId().toString(),
-            name: "Kids"
+            _id: new ObjectId(),
+            name: "Kids",
+
         },
         password: "ZcDFTP5oOqYgkPU",
         rols: [
             "doctor"
         ]
     }, {
-
+        _id: new ObjectId(),
         cmp: "615",
         name: "Kirk",
         fatherSurname: "Hessel",
@@ -184,15 +197,16 @@ export const UserExample: User[] = [
         email: "Orville60@hotmail.com",
         phone: "348-252-6766 x2211",
         department: {
-            _id: new ObjectId().toString(),
-            name: "Shoes"
+            _id: new ObjectId(),
+            name: "Shoes",
+
         },
         password: "9iauyniecyxVbeM",
         rols: [
             "doctor"
         ]
     }, {
-
+        _id: new ObjectId(),
         cmp: "257",
         name: "Wyman",
         fatherSurname: "Boyer",
@@ -200,15 +214,16 @@ export const UserExample: User[] = [
         email: "Ransom70@hotmail.com",
         phone: "982-561-6885",
         department: {
-            _id: new ObjectId().toString(),
-            name: "Baby"
+            _id: new ObjectId(),
+            name: "Baby",
+
         },
         password: "MJlOkZigydECzOT",
         rols: [
             "secretary"
         ]
     }, {
-
+        _id: new ObjectId(),
         cmp: "407",
         name: "Craig",
         fatherSurname: "Gutmann",
@@ -216,15 +231,16 @@ export const UserExample: User[] = [
         email: "Marques.Casper87@gmail.com",
         phone: "384-260-3421 x8302",
         department: {
-            _id: new ObjectId().toString(),
-            name: "Beauty"
+            _id: new ObjectId(),
+            name: "Beauty",
+
         },
         password: "XhgVGAuep7_eCzK",
         rols: [
             "secretary"
         ]
     }, {
-
+        _id: new ObjectId(),
         cmp: "189",
         name: "Teresa",
         fatherSurname: "Abshire",
@@ -232,15 +248,16 @@ export const UserExample: User[] = [
         email: "Lilla.Reynolds@gmail.com",
         phone: "(514) 717-4666",
         department: {
-            _id: new ObjectId().toString(),
-            name: "Kids"
+            _id: new ObjectId(),
+            name: "Kids",
+
         },
         password: "4Emh7nNtY8yaTCw",
         rols: [
             "secretary"
         ]
     }, {
-
+        _id: new ObjectId(),
         cmp: "949",
         name: "Tessie",
         fatherSurname: "Pollich",
@@ -248,15 +265,16 @@ export const UserExample: User[] = [
         email: "Elfrieda54@hotmail.com",
         phone: "481-566-3626 x02834",
         department: {
-            _id: new ObjectId().toString(),
-            name: "Shoes"
+            _id: new ObjectId(),
+            name: "Shoes",
+
         },
         password: "gSOppyxFqTHp11w",
         rols: [
             "doctor"
         ]
     }, {
-
+        _id: new ObjectId(),
         cmp: "841",
         name: "Abbey",
         fatherSurname: "McClure",
@@ -264,15 +282,16 @@ export const UserExample: User[] = [
         email: "Forrest_Donnelly7@hotmail.com",
         phone: "1-839-655-6867 x282",
         department: {
-            _id: new ObjectId().toString(),
-            name: "Sports"
+            _id: new ObjectId(),
+            name: "Sports",
+
         },
         password: "mqzvsFhVTbimWnU",
         rols: [
             "doctor"
         ]
     }, {
-
+        _id: new ObjectId(),
         cmp: "102",
         name: "Hilma",
         fatherSurname: "Medhurst",
@@ -280,15 +299,16 @@ export const UserExample: User[] = [
         email: "Tillman_Rau@gmail.com",
         phone: "889-448-5276",
         department: {
-            _id: new ObjectId().toString(),
-            name: "Kids"
+            _id: new ObjectId(),
+            name: "Kids",
+
         },
         password: "9DU6DMy0K7OsJzY",
         rols: [
             "doctor"
         ]
     }, {
-
+        _id: new ObjectId(),
         cmp: "406",
         name: "Osborne",
         fatherSurname: "Bechtelar",
@@ -296,15 +316,16 @@ export const UserExample: User[] = [
         email: "Alia0@hotmail.com",
         phone: "1-784-517-5581 x79473",
         department: {
-            _id: new ObjectId().toString(),
-            name: "Baby"
+            _id: new ObjectId(),
+            name: "Baby",
+
         },
         password: "tnjjcZnNmIVQBBb",
         rols: [
             "secretary"
         ]
     }, {
-
+        _id: new ObjectId(),
         cmp: "393",
         name: "Joshuah",
         fatherSurname: "Leffler",
@@ -312,15 +333,16 @@ export const UserExample: User[] = [
         email: "Amiya97@yahoo.com",
         phone: "1-887-619-7680",
         department: {
-            _id: new ObjectId().toString(),
-            name: "Tools"
+            _id: new ObjectId(),
+            name: "Tools",
+
         },
         password: "MwcKdWSE0kiL2IJ",
         rols: [
             "doctor"
         ]
     }, {
-
+        _id: new ObjectId(),
         cmp: "897",
         name: "Kali",
         fatherSurname: "Weissnat",
@@ -328,15 +350,16 @@ export const UserExample: User[] = [
         email: "Devon.Murphy34@yahoo.com",
         phone: "1-891-218-3949 x929",
         department: {
-            _id: new ObjectId().toString(),
-            name: "Grocery"
+            _id: new ObjectId(),
+            name: "Grocery",
+
         },
         password: "vt38AqA3B7ciZqs",
         rols: [
             "secretary"
         ]
     }, {
-
+        _id: new ObjectId(),
         cmp: "387",
         name: "Akeem",
         fatherSurname: "Langosh",
@@ -344,15 +367,16 @@ export const UserExample: User[] = [
         email: "Mitchell71@gmail.com",
         phone: "974.949.5642 x87420",
         department: {
-            _id: new ObjectId().toString(),
-            name: "Jewelery"
+            _id: new ObjectId(),
+            name: "Jewelery",
+
         },
         password: "4fEzKUm1he4HGH8",
         rols: [
             "doctor"
         ]
     }, {
-
+        _id: new ObjectId(),
         cmp: "769",
         name: "Reymundo",
         fatherSurname: "Halvorson",
@@ -360,15 +384,16 @@ export const UserExample: User[] = [
         email: "Leslie_Fritsch@yahoo.com",
         phone: "642.518.4082",
         department: {
-            _id: new ObjectId().toString(),
-            name: "Music"
+            _id: new ObjectId(),
+            name: "Music",
+
         },
         password: "BkeRoj633hZD9py",
         rols: [
             "doctor"
         ]
     }, {
-
+        _id: new ObjectId(),
         cmp: "614",
         name: "Domenick",
         fatherSurname: "Nader",
@@ -376,15 +401,16 @@ export const UserExample: User[] = [
         email: "Elsie.Hyatt@hotmail.com",
         phone: "(406) 361-4951",
         department: {
-            _id: new ObjectId().toString(),
-            name: "Toys"
+            _id: new ObjectId(),
+            name: "Toys",
+
         },
         password: "HKKlayV7Wf0Yts5",
         rols: [
             "doctor"
         ]
     }, {
-
+        _id: new ObjectId(),
         cmp: "545",
         name: "Darius",
         fatherSurname: "O'Reilly",
@@ -392,15 +418,16 @@ export const UserExample: User[] = [
         email: "Agustina_Huels@gmail.com",
         phone: "313.915.1909 x54222",
         department: {
-            _id: new ObjectId().toString(),
-            name: "Baby"
+            _id: new ObjectId(),
+            name: "Baby",
+
         },
         password: "eGJBgnASZGDYsgg",
         rols: [
             "secretary"
         ]
     }, {
-
+        _id: new ObjectId(),
         cmp: "648",
         name: "Harrison",
         fatherSurname: "Carter",
@@ -408,15 +435,16 @@ export const UserExample: User[] = [
         email: "Leslie.Johns48@gmail.com",
         phone: "(725) 451-5734 x10679",
         department: {
-            _id: new ObjectId().toString(),
-            name: "Sports"
+            _id: new ObjectId(),
+            name: "Sports",
+
         },
         password: "7JZ4IlU4izlc0s7",
         rols: [
             "secretary"
         ]
     }, {
-
+        _id: new ObjectId(),
         cmp: "211",
         name: "Wyman",
         fatherSurname: "Roob",
@@ -424,15 +452,16 @@ export const UserExample: User[] = [
         email: "Stan.Sporer@hotmail.com",
         phone: "455.766.8762",
         department: {
-            _id: new ObjectId().toString(),
-            name: "Games"
+            _id: new ObjectId(),
+            name: "Games",
+
         },
         password: "w0KzeWd_pzY0NcT",
         rols: [
             "doctor"
         ]
     }, {
-
+        _id: new ObjectId(),
         cmp: "357",
         name: "Adrienne",
         fatherSurname: "Bins",
@@ -440,15 +469,16 @@ export const UserExample: User[] = [
         email: "Salvador_Hackett53@yahoo.com",
         phone: "347-911-2750 x69939",
         department: {
-            _id: new ObjectId().toString(),
-            name: "Clothing"
+            _id: new ObjectId(),
+            name: "Clothing",
+
         },
         password: "bAOmJKqiSf16KuU",
         rols: [
             "secretary"
         ]
     }, {
-
+        _id: new ObjectId(),
         cmp: "738",
         name: "Matteo",
         fatherSurname: "Dooley",
@@ -456,15 +486,16 @@ export const UserExample: User[] = [
         email: "Junius.Gibson@gmail.com",
         phone: "626.541.0166",
         department: {
-            _id: new ObjectId().toString(),
-            name: "Sports"
+            _id: new ObjectId(),
+            name: "Sports",
+
         },
         password: "gTiSmDNEw18deWV",
         rols: [
             "doctor"
         ]
     }, {
-
+        _id: new ObjectId(),
         cmp: "376",
         name: "Frederik",
         fatherSurname: "Hagenes",
@@ -472,8 +503,9 @@ export const UserExample: User[] = [
         email: "Jermain_Hills@gmail.com",
         phone: "897.913.4114 x21778",
         department: {
-            _id: new ObjectId().toString(),
-            name: "Music"
+            _id: new ObjectId(),
+            name: "Music",
+
         },
         password: "_ferHduTqhCahM1",
         rols: [
