@@ -25,8 +25,6 @@ export const listHistorias: (departments: any[], patients: any[], users: any[], 
 
         const userSelected = users[Math.floor(Math.random() * users.length)];
 
-
-
         cacheHistories.push(
             {
                 number: (index * 1000).toString(),

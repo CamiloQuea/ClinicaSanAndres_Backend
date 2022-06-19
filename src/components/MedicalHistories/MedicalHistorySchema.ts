@@ -68,7 +68,7 @@ export const medicalHistoryComponent = new Collection<MedicalHistory>(collection
 
     const users = await userDao.getUsers();
 
-    const historias = await listHistorias(departments, patients, users,10000)
+    const historias = await listHistorias(departments, patients, users,1000)
 
     await medicalHistoryCollection.insertMany(historias)
 
