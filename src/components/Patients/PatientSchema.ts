@@ -1,11 +1,7 @@
-import { ObjectId } from "mongodb";
-import { Collection } from "../Collection";
-import { PatientExample } from "./PatientExample";
-
-const collectionName = 'patients';
+import mongoose, { model, Schema, Types } from "mongoose";
 
 export interface Patient {
-    _id: ObjectId
+    _id: Types.ObjectId
     name: string,
     fatherSurname: string,
     motherSurname: string,
@@ -14,21 +10,25 @@ export interface Patient {
     dni: string,
     birthday: string,
     gender: string,
-    allergis: string[],
+    allergies: string[],
     healthInsuranceType: string,
     nationality: string
 }
 
-const indexes = [{ field: 'dni', mode: 'unique' }]
 
-export const patientComponent = new Collection<Patient>(collectionName, indexes, async (patientCollection) => {
-    const patients = PatientExample.map((patient, i) => {
-
-        return {
-            ...patient,
-            dni: (i * 10000).toString()
-        }
-
-    })
-    patientCollection.insertMany(patients);
+const patientSchema = new Schema<Patient>({
+    name: { type: String },
+    fatherSurname: { type: String },
+    motherSurname: { type: String },
+    email: { type: String },
+    phone: { type: String },
+    dni: { type: String },
+    birthday: { type: String },
+    gender: { type: String },
+    allergies: { type: [String] },
+    healthInsuranceType: { type: String },
+    nationality: { type: String }
 })
+
+
+export const PatientModel = mongoose.model<Patient>('Patient', patientSchema);

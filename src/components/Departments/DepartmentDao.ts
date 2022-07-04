@@ -1,6 +1,4 @@
-import { mongodb } from "../../services/db";
-import { DepartmentExample } from "./DepartmentExample";
-import { Department, departmentComponent } from "./DepartmentSchema";
+import { Department, DepartmentModel } from "./DepartmentSchema";
 
 
 class DepartmentDao {
@@ -8,9 +6,9 @@ class DepartmentDao {
     async createDepartment(department: Department) {
 
 
-        const departments = await departmentComponent.getCollection();
+        const departmentModel = new DepartmentModel(department)
 
-        const departmentSaved = await departments.insertOne(department);
+        const departmentSaved = await departmentModel.save()
 
 
         return departmentSaved;
@@ -19,9 +17,7 @@ class DepartmentDao {
 
     async getDepartments() {
 
-        const departments = await departmentComponent.getCollection();
-
-        const departmentList = await departments.find().toArray();
+        const departmentList = await DepartmentModel.find();
 
         return departmentList
 

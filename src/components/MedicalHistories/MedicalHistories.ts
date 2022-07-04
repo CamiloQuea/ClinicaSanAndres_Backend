@@ -1,10 +1,16 @@
 import { faker } from '@faker-js/faker'
+import { Department } from '../Departments/DepartmentSchema';
+import { Patient } from '../Patients/PatientSchema';
+import { User } from '../Users/UserSchema';
+import { MedicalHistory } from './MedicalHistorySchema'
 
-export const listHistorias: (departments: any[], patients: any[], users: any[], number?: number) => Promise<any[]> = async (departments, patients, users, number = 1) => {
+export const listHistories = (departments: Department[], patients: Patient[], users: User[], number: number = 100) => {
+    // console.log(departments)
+    // console.log(patients)
+    // console.log(users)
+    const cacheHistories: MedicalHistory[] = [];
 
-    const cacheHistories: any[] = [];
-
-    async function getAge(dateString: string) {
+    function getAge(dateString: string) {
         var today = new Date();
         var birthDate = new Date(dateString);
         var age = today.getFullYear() - birthDate.getFullYear();
@@ -32,12 +38,13 @@ export const listHistorias: (departments: any[], patients: any[], users: any[], 
                     name: patientSelected.name,
                     motherSurname: patientSelected.motherSurname,
                     fatherSurname: patientSelected.fatherSurname,
-                    birthday: new Date(patientSelected.birthday),
+                    birthday: patientSelected.birthday,
                     dni: patientSelected.dni,
-                    edad: await getAge(patientSelected.birthday),
+                    edad: getAge(patientSelected.birthday),
                     gender: patientSelected.gender,
                     attorney: faker.helpers.arrayElement([null, faker.name.firstName() + " " + faker.name.lastName()]),
-                    patient_id: patientSelected._id
+                    patient_id: patientSelected._id,
+                    entry_date: faker.date.between('2022-01-01T00:00:00.000Z', '2022-06-01T00:00:00.000')
                 },
                 anamnesis: {
                     record: "ANTECEDENTE " + faker.lorem.text(),
@@ -53,14 +60,20 @@ export const listHistorias: (departments: any[], patients: any[], users: any[], 
                         pa: (() => {
 
                             const num = faker.datatype.number({ min: 90, max: 140 })
-                            return num.toString() + "/" + (num -  faker.datatype.number({ min: 40, max: 60})).toString()
+                            return num.toString() + "/" + (num - faker.datatype.number({ min: 40, max: 60 })).toString()
                         })(),
                         sat02: faker.datatype.number({ min: 95, max: 100 }).toString(),
                     }
                 },
                 admissionDiagnosis: [{ title: "", type: "", cie: "" }],
-                auxiliaryExam: faker.name.firstName() + " " + faker.name.lastName(),
-                treatment: {
+                treatment: faker.name.firstName() + " " + faker.name.lastName(),
+                auxiliaryExam: [{
+                    doctor: {
+                        _id: userSelected._id,
+                        name: userSelected.name,
+                        fatherSurname: userSelected.fatherSurname,
+                        motherSurname: userSelected.motherSurname,
+                    },
                     description: "DESCRIPCION DE TRATAMIENTO " + faker.lorem.text(),
                     department: {
                         _id: departmentSelected._id,
@@ -69,14 +82,16 @@ export const listHistorias: (departments: any[], patients: any[], users: any[], 
                     service: {
                         _id: serviceSelected._id,
                         description: serviceSelected.name
-                    }
-                },
-                doctor: {
+                    },
+                    consultation_date: faker.date.between('2022-01-01T00:00:00.000Z', '2022-06-01T00:00:00.000'),
+                }],
+                creator: {
                     _id: userSelected._id,
                     fatherSurname: userSelected.fatherSurname,
                     motherSurname: userSelected.motherSurname,
                     name: userSelected.name
-                }
+                },
+                creation_date: faker.date.between('2022-01-01T00:00:00.000Z', '2022-06-01T00:00:00.000')
 
             }
         )

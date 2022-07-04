@@ -52,7 +52,7 @@ export const patientValidation = (department: Patient) => {
                 'any.required': '"Fecha de nacimiento" es requerido',
                 'string.base': '"Fecha de nacimiento" tiene que tener ser string',
             }),
-        allergis: Joi.array()
+        allergies: Joi.array()
             .items(Joi.string())
             .default([])
             .messages({

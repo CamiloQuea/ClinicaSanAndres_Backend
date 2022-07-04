@@ -1,13 +1,7 @@
-import { ObjectId } from "mongodb";
-import { departmentDao } from "../Departments/DepartmentDao";
-import { Collection } from "../Collection";
-import { userBusiness } from "./UserBusiness";
-import { UserExample } from "./UserExample";
-
-const collectionName = 'users';
+import mongoose, { model, Schema, Types } from "mongoose";
 
 export interface User {
-    _id: ObjectId,
+    _id: Types.ObjectId;
     cmp: string,
     name: string,
     fatherSurname: string,
@@ -15,27 +9,36 @@ export interface User {
     email: string,
     phone: string,
     department: {
-        _id: ObjectId,
+        _id: Types.ObjectId
         name: string
     },
     password: string,
     rols: string[]
 }
 
-const indexes = [
-    { field: 'email', mode: "unique" }
-]
+const department = new Schema<{
+    _id: Types.ObjectId;
+    name: string,
+}>({
+    name: String,
+});
 
-export const userComponent = new Collection<User>(collectionName, indexes, async () => {
+const userSchema = new Schema<User>({
 
-    const department = await departmentDao.getDepartments();
-
-    UserExample.forEach(async (user) => {
-
-        const { _id, name } = department[Math.floor(Math.random() * department.length)];
-        user.department = { _id, name };
-        
-        const a = await userBusiness.createUser(user);
-    });
+    cmp: { type: String },
+    name: { type: String },
+    fatherSurname: { type: String },
+    motherSurname: { type: String },
+    email: { type: String },
+    phone: { type: String },
+    department: {
+        type: department
+    },
+    password: { type: String },
+    rols: { type: [String] }
 
 });
+
+
+export const UserModel = mongoose.model<User>('User', userSchema);
+

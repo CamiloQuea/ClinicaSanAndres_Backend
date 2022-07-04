@@ -1,49 +1,58 @@
-import log from '../services/log';
-import { Db, MongoClient } from 'mongodb'
-import dbconfig from '../configs/db'
+import mongoose from 'mongoose'
+import { DepartmentExample } from '../components/Departments/DepartmentExample';
+import { DepartmentModel } from '../components/Departments/DepartmentSchema';
+import { listHistories } from '../components/MedicalHistories/MedicalHistories';
+import { MedicalHistorytModel } from '../components/MedicalHistories/MedicalHistorySchema';
+import { PatientExample } from '../components/Patients/PatientExample';
+import { PatientModel } from '../components/Patients/PatientSchema';
+import { userBusiness } from '../components/Users/UserBusiness';
+import { userDao } from '../components/Users/UserDao';
+import { UserExample } from '../components/Users/UserExample';
+import { UserModel } from '../components/Users/UserSchema';
+import { faker } from '@faker-js/faker'
 
-class MongoDB {
+export const initDB = async () => {
 
-    cachedDb: Db;
-    client: MongoClient;
+    mongoose.connect('mongodb://localhost:27017/NEWtest', async () => {
+        // mongoose.connection.db.dropDatabase();
 
-    MONGODB_URI = dbconfig.uri;
-    DB_NAME = dbconfig.dbName;
+        //AGREGANDO DEPARTAMENTOS
 
-    async connectToDatabase() {
+        const departmentList = await DepartmentModel.insertMany(DepartmentExample);
 
-        if (this.cachedDb) {
+        //AGREGANDO USUARIOS
 
-            return this.cachedDb;
-        }
-        try {
-            // Connect to our MongoDB database hosted on MongoDB Atlas
+        //---AGREGANDO LOS DEPARTAMENTOS GENERADOS
+        const UserModified = UserExample.map((user) => {
 
-            this.client = await MongoClient.connect(this.MONGODB_URI);
+            const departmentSelected = departmentList[Math.floor(Math.random() * departmentList.length)];
 
-            const db = this.client.db(this.DB_NAME);
+            user.department = {
+                _id: departmentSelected._id,
+                name: departmentSelected.name
+            }
 
-            this.cachedDb = db;
+            return { ...user, _id: undefined };
 
-            log.info('DB conectada');
-
-            this.setListener();
-
-            return db;
-        } catch (error) {
-            console.log("ERROR aquiring DB Connection!");
-            throw error;
-        }
-
-
-    };
-
-    private setListener() {
+        })
 
 
+        //INSERTANDO USUARIOS
+        const userList = await UserModel.insertMany(UserModified)
 
-    }
+        //INGRESANDO PACIENTES
+        const patientsList = await PatientModel.insertMany(PatientExample)
+
+
+        //CREACION DE HISTORIAS
+        const historiesList = listHistories(departmentList, patientsList, userList, 1000)
+
+
+        //INSERTANDO LAS HISTORIAS
+        await MedicalHistorytModel.insertMany(historiesList)
+
+    });
+
+
 
 }
-
-export const mongodb = new MongoDB();

@@ -1,28 +1,30 @@
-import { ObjectId } from "mongodb";
-import { Collection } from "../Collection";
-import { departmentDao } from "./DepartmentDao";
-import { DepartmentExample } from "./DepartmentExample";
-
-const collectionName = 'departments';
+import mongoose, { model, Schema, Types } from "mongoose";
 
 export interface Service {
-    _id: ObjectId,
+    _id: Types.ObjectId,
     name: string,
 
 
 }
 
 export interface Department {
-    _id: ObjectId,
+    _id: Types.ObjectId,
     name: string,
     services: Service[]
-
 }
 
-const indexes = [{ field: 'name', mode: 'unique' }, { field: 'service.name', mode: 'sparse' }]
+const serviceSchema = new Schema<Service>({
+    name: { type: String }
+})
 
-export const departmentComponent = new Collection<Department>(collectionName, indexes, async (departmentCollection) => {
 
-    await departmentCollection.insertMany(DepartmentExample)
+const departmentSchema = new Schema<Department>({
+    name: { type: String },
+    services: {
+        type: [serviceSchema],
 
-});
+    }
+})
+
+
+export const DepartmentModel = mongoose.model<Department>('Department', departmentSchema);
