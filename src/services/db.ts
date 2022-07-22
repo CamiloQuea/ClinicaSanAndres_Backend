@@ -23,7 +23,22 @@ const createData = async () => {
 
     //AGREGANDO DEPARTAMENTOS
 
-    const departmentList = await DepartmentModel.insertMany(DepartmentExample);
+    const depMod = DepartmentExample.map((el,index)=>{
+
+       const modServ =  el.services.map((service, index)=>{
+            //@ts-ignore
+            return {...service, price: service.price * el.m}
+        })
+
+        const lastReturn =  {...el, services: modServ, m: undefined }
+        
+        
+        return lastReturn
+    })
+
+    const departmentList = await DepartmentModel.insertMany(depMod);
+
+    
 
     //AGREGANDO USUARIOS
 
